@@ -1,4 +1,4 @@
-# Advent of Code - December 2021
+# Advent of Code
 
 rust-lang/rustlings, but with `a few modifications :)`.
 
