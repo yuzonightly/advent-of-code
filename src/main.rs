@@ -3,7 +3,8 @@ use std::fmt::{self, Display, Formatter};
 use std::fs::{self, remove_file};
 use std::path::PathBuf;
 use std::process::{self, Command};
-use std::env;
+
+use argh::FromArgs;
 
 #[macro_use]
 mod ui;
@@ -81,7 +82,7 @@ fn temp_file() -> String {
     format!("./temp_{}_{}", process::id(), thread_id)
 }
 
-// Compile the exercise
+// Compile the problem
 fn compile_exercise(exercise: &Exercise) -> Result<CompiledExercise, ExerciseOutput> {
     let cmd = match exercise.mode {
         Mode::Compile => Command::new("rustc")
@@ -111,7 +112,7 @@ fn compile_exercise(exercise: &Exercise) -> Result<CompiledExercise, ExerciseOut
     }
 }
 
-// Run the exercise
+// Run the problem
 fn run(exercise: &Exercise) -> Result<ExerciseOutput, ExerciseOutput> {
     let arg = match exercise.mode {
         Mode::Test => "--show-output",
@@ -135,7 +136,7 @@ fn run(exercise: &Exercise) -> Result<ExerciseOutput, ExerciseOutput> {
     }
 }
 
-// Returns the Exercise chosen by the user
+// Returns the problem chosen by the user
 fn find_exercise<'a>(name: &str, exercises: &'a [Exercise]) -> &'a Exercise {
     exercises
         .iter()
@@ -146,44 +147,127 @@ fn find_exercise<'a>(name: &str, exercises: &'a [Exercise]) -> &'a Exercise {
         })
 }
 
+// Returns problems from a specific year
+fn find_folder<'a>(name: &str, exercises: &'a [Exercise]) -> Vec<&'a Exercise> {
+    let mut exer: Vec<&'a Exercise> = Vec::new();
+    for e in exercises.iter() {
+        let path_split: Vec<&str> = e.path.to_str().unwrap().split("/").collect();
+        let folder_name = path_split[1];
+        if folder_name == name {
+            exer.push(e);
+        }
+    }
+    if exer.is_empty() {
+        println!("Folder {} not found!", name);
+        std::process::exit(1);
+    } else {
+        exer
+    }
+}
+
+#[derive(FromArgs, PartialEq, Debug)]
+/// Advent of Code
+struct Args {
+    #[argh(subcommand)]
+    nested: Option<Subcommands>,
+}
+
+#[derive(FromArgs, PartialEq, Debug)]
+#[argh(subcommand)]
+enum Subcommands {
+    RunFile(RunFileArgs),
+    RunYear(RunYearArgs),
+}
+
+#[derive(FromArgs, PartialEq, Debug)]
+#[argh(subcommand, name = "file")]
+/// Runs a single problem
+struct RunFileArgs {
+    #[argh(positional)]
+    /// the order of the problem [1..25]
+    file_name: String,
+}
+
+#[derive(FromArgs, PartialEq, Debug)]
+#[argh(subcommand, name = "year")]
+/// Runs problems from a specific YEAR
+struct RunYearArgs {
+    #[argh(positional)]
+    /// the year
+    year: String,
+}
+
 fn main() {
+    let args: Args = argh::from_env();
 
-
-    let name = "variables1"; // arg --all(a) --specify(s)
-                             // let path = Path::new("./exercises");
     let toml_str = &fs::read_to_string("info.toml").unwrap();
     let exercises = toml::from_str::<ExerciseList>(toml_str).unwrap().exercises;
 
-    // let exercise = find_exercise(name, &exercises);
-    // let compilation_result = compile_exercise(exercise);
+    let command = args.nested.unwrap_or_else(|| {
+        println!("{}", "Something went wrong. Try --help.");
+        std::process::exit(0);
+    });
 
-    exercises.iter().for_each(|exercise| {
-        let compilation_result = compile_exercise(exercise);
+    match command {
+        Subcommands::RunFile(subargs) => {
+            let exercise = find_exercise(&subargs.file_name, &exercises);
 
-        match compilation_result {
-            Ok(compiled_exercise) => {
-                println!("Exercise compiled successfully.");
-                let run_exercise = run(compiled_exercise.exercise);
-                match run_exercise {
-                    Ok(output) => {
-                        success!("{} executed successfully! Here's the output:", exercise);
-                        println!("{}", output.stdout)
+            let compilation_result = compile_exercise(exercise);
+
+            match compilation_result {
+                Ok(compiled_exercise) => {
+                    println!("Exercise compiled successfully.");
+                    let run_exercise = run(compiled_exercise.exercise);
+                    match run_exercise {
+                        Ok(output) => {
+                            success!("{} executed successfully! Here's the output:", exercise);
+                            println!("{}", output.stdout);
+                        }
+                        Err(output) => {
+                            run_error!("Execution of {} failed! Here's the output:", exercise);
+                            println!("{}", output.stderr);
+                        }
+                    };
+                }
+                Err(output) => {
+                    compilation_error!(
+                                "Compiling of {} failed! Please correct it and try again. Here's the output:\n",
+                                exercise
+                            );
+                    println!("{}", output.stderr);
+                }
+            };
+            clean();
+        }
+        Subcommands::RunYear(subargs) => {
+            let dir_exercises = find_folder(&subargs.year, &exercises);
+            dir_exercises.iter().for_each(|exercise| {
+                let compilation_result = compile_exercise(exercise);
+                match compilation_result {
+                    Ok(compiled_exercise) => {
+                        println!("Exercise compiled successfully.");
+                        let run_exercise = run(compiled_exercise.exercise);
+                        match run_exercise {
+                            Ok(output) => {
+                                success!("{} executed successfully! Here's the output:", exercise);
+                                println!("{}", output.stdout)
+                            }
+                            Err(output) => {
+                                run_error!("Execution of {} failed! Here's the output:", exercise);
+                                println!("{}", output.stderr);
+                            }
+                        };
                     }
                     Err(output) => {
-                        run_error!("Execution of {} failed! Here's the output:", exercise);
+                        compilation_error!(
+                            "Compiling of {} failed! Please correct it and try again. Here's the output:\n",
+                            exercise
+                        );
                         println!("{}", output.stderr);
                     }
                 };
-            }
-            Err(output) => {
-                compilation_error!(
-                    "Compiling of {} failed! Please correct it and try again. Here's the output:\n",
-                    exercise
-                );
-                println!("{}", output.stderr);
-            }
-        };
-    });
-
-    clean();
+                clean();
+            });
+        }
+    }
 }
