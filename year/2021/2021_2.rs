@@ -1,7 +1,7 @@
 use std::fs;
 use std::io::{self, Write};
 
-fn puzzle_1(numbers: &Vec<u32>) {
+fn puzzle_1(numbers: Vec<u32>) {
     let mut increasing = 0;
     let mut previous: u32 = numbers[0];
     for i in 1..numbers.len() {
@@ -13,7 +13,7 @@ fn puzzle_1(numbers: &Vec<u32>) {
     writeln!(io::stdout(), "Puzzle 1: {}", increasing);
 }
 
-fn puzzle_2(numbers: &mut Vec<u32>) {
+fn puzzle_2(mut numbers: Vec<u32>) {
     let mut increasing = 0;
     let mut previous: u32 = numbers[0..3].iter().sum();
     numbers.drain(0..1);
@@ -29,8 +29,13 @@ fn puzzle_2(numbers: &mut Vec<u32>) {
 }
 
 fn main() {
-    let input = fs::read_to_string("./year/2021/inputs/day1.input").expect("Error reading file.");
+    let input =
+        fs::read_to_string("./year/2021/inputs/day1_puzzle1.input").expect("Error reading file.");
+    let numbers: Vec<u32> = input.lines().map(|s| s.parse::<u32>().unwrap()).collect();
+    puzzle_1(numbers);
+
+    let input =
+        fs::read_to_string("./year/2021/inputs/day1_puzzle2.input").expect("Error reading file.");
     let mut numbers: Vec<u32> = input.lines().map(|s| s.parse::<u32>().unwrap()).collect();
-    puzzle_1(&numbers);
-    puzzle_2(&mut numbers);
+    puzzle_2(numbers);
 }
