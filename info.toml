@@ -12,6 +12,12 @@ path = "year/2020/2020_2.rs"
 mode = "compile"
 hint = """ """
 
+[[exercises]]
+name = "2020_3"
+path = "year/2020/2020_3.rs"
+mode = "compile"
+hint = """ """
+
 # AoC 2021
 
 [[exercises]]

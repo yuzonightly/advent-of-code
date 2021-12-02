@@ -18,7 +18,7 @@ fn puzzle_2(numbers: &Vec<u32>) {
                 if (n1 + n2 + n3) == 2020 {
                     writeln!(
                         io::stdout(),
-                        "Puzzle 1: {} * {} * {} = {}",
+                        "Puzzle 2: {} * {} * {} = {}",
                         n1,
                         n2,
                         n3,

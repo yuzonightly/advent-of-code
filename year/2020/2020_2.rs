@@ -91,7 +91,7 @@ fn puzzle_2(passwords: &Vec<Password>) {
             valid += 1;
         }
     }
-    writeln!(io::stdout(), "Puzzle 1: {}", valid);
+    writeln!(io::stdout(), "Puzzle 2: {}", valid);
 }
 
 fn main() {
