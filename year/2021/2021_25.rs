@@ -19,6 +19,6 @@ fn puzzle_1() {}
 fn puzzle_2() {}
 
 fn main() {
-    let input = fs::read_to_string("./year/2020/inputs/day3.input").expect("Error reading file.");
+    let input = fs::read_to_string("./year/2021/inputs/day25.input").expect("Error reading file.");
     puzzle_1();
 }
