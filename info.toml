@@ -31,3 +31,9 @@ name = "2021_2"
 path = "year/2021/2021_2.rs"
 mode = "compile"
 hint = """ """
+
+[[exercises]]
+name = "2021_3"
+path = "year/2021/2021_3.rs"
+mode = "compile"
+hint = """ """
