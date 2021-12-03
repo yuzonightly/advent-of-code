@@ -3,16 +3,16 @@ use std::fs;
 use std::io::{self, Write};
 use std::str::{self, FromStr};
 
-#[derive(Clone, Debug)]
-struct Action {
-    act: i32,
-}
+// #[derive(Clone, Debug)]
+// struct Action {
+//     act: i32,
+// }
 
-impl FromStr for Action {
-    type Err = Box<dyn Error>;
+// impl FromStr for Action {
+//     type Err = Box<dyn Error>;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {}
-}
+//     fn from_str(s: &str) -> Result<Self, Self::Err> {}
+// }
 
 fn puzzle_1() {
     writeln!(io::stdout(), "Puzzle 1: {}", 1);

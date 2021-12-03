@@ -1,3 +1,763 @@
+# AoC 2015
+
+[[exercises]]
+name = "2015_1"
+path = "year/2015/2015_1.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_2"
+path = "year/2015/2015_2.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_3"
+path = "year/2015/2015_3.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_4"
+path = "year/2015/2015_4.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_5"
+path = "year/2015/2015_5.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_6"
+path = "year/2015/2015_6.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_7"
+path = "year/2015/2015_7.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_8"
+path = "year/2015/2015_8.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_9"
+path = "year/2015/2015_9.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_10"
+path = "year/2015/2015_10.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_11"
+path = "year/2015/2015_11.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_12"
+path = "year/2015/2015_12.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_13"
+path = "year/2015/2015_13.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_14"
+path = "year/2015/2015_14.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_15"
+path = "year/2015/2015_15.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_16"
+path = "year/2015/2015_16.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_17"
+path = "year/2015/2015_17.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_18"
+path = "year/2015/2015_18.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_19"
+path = "year/2015/2015_19.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_20"
+path = "year/2015/2015_20.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_21"
+path = "year/2015/2015_21.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_22"
+path = "year/2015/2015_22.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_23"
+path = "year/2015/2015_23.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_24"
+path = "year/2015/2015_24.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2015_25"
+path = "year/2015/2015_25.rs"
+mode = "compile"
+hint = """ """
+
+# AoC 2016
+
+[[exercises]]
+name = "2016_1"
+path = "year/2016/2016_1.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_2"
+path = "year/2016/2016_2.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_3"
+path = "year/2016/2016_3.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_4"
+path = "year/2016/2016_4.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_5"
+path = "year/2016/2016_5.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_6"
+path = "year/2016/2016_6.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_7"
+path = "year/2016/2016_7.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_8"
+path = "year/2016/2016_8.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_9"
+path = "year/2016/2016_9.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_10"
+path = "year/2016/2016_10.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_11"
+path = "year/2016/2016_11.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_12"
+path = "year/2016/2016_12.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_13"
+path = "year/2016/2016_13.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_14"
+path = "year/2016/2016_14.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_15"
+path = "year/2016/2016_15.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_16"
+path = "year/2016/2016_16.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_17"
+path = "year/2016/2016_17.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_18"
+path = "year/2016/2016_18.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_19"
+path = "year/2016/2016_19.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_20"
+path = "year/2016/2016_20.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_21"
+path = "year/2016/2016_21.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_22"
+path = "year/2016/2016_22.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_23"
+path = "year/2016/2016_23.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_24"
+path = "year/2016/2016_24.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2016_25"
+path = "year/2016/2016_25.rs"
+mode = "compile"
+hint = """ """
+
+# AoC 2017
+
+[[exercises]]
+name = "2017_1"
+path = "year/2017/2017_1.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_2"
+path = "year/2017/2017_2.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_3"
+path = "year/2017/2017_3.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_4"
+path = "year/2017/2017_4.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_5"
+path = "year/2017/2017_5.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_6"
+path = "year/2017/2017_6.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_7"
+path = "year/2017/2017_7.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_8"
+path = "year/2017/2017_8.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_9"
+path = "year/2017/2017_9.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_10"
+path = "year/2017/2017_10.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_11"
+path = "year/2017/2017_11.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_12"
+path = "year/2017/2017_12.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_13"
+path = "year/2017/2017_13.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_14"
+path = "year/2017/2017_14.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_15"
+path = "year/2017/2017_15.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_16"
+path = "year/2017/2017_16.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_17"
+path = "year/2017/2017_17.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_18"
+path = "year/2017/2017_18.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_19"
+path = "year/2017/2017_19.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_20"
+path = "year/2017/2017_20.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_21"
+path = "year/2017/2017_21.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_22"
+path = "year/2017/2017_22.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_23"
+path = "year/2017/2017_23.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_24"
+path = "year/2017/2017_24.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2017_25"
+path = "year/2017/2017_25.rs"
+mode = "compile"
+hint = """ """
+
+# AoC 2018
+
+[[exercises]]
+name = "2018_1"
+path = "year/2018/2018_1.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_2"
+path = "year/2018/2018_2.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_3"
+path = "year/2018/2018_3.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_4"
+path = "year/2018/2018_4.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_5"
+path = "year/2018/2018_5.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_6"
+path = "year/2018/2018_6.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_7"
+path = "year/2018/2018_7.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_8"
+path = "year/2018/2018_8.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_9"
+path = "year/2018/2018_9.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_10"
+path = "year/2018/2018_10.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_11"
+path = "year/2018/2018_11.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_12"
+path = "year/2018/2018_12.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_13"
+path = "year/2018/2018_13.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_14"
+path = "year/2018/2018_14.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_15"
+path = "year/2018/2018_15.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_16"
+path = "year/2018/2018_16.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_17"
+path = "year/2018/2018_17.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_18"
+path = "year/2018/2018_18.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_19"
+path = "year/2018/2018_19.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_20"
+path = "year/2018/2018_20.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_21"
+path = "year/2018/2018_21.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_22"
+path = "year/2018/2018_22.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_23"
+path = "year/2018/2018_23.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_24"
+path = "year/2018/2018_24.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2018_25"
+path = "year/2018/2018_25.rs"
+mode = "compile"
+hint = """ """
+
+# AoC 2019
+
+[[exercises]]
+name = "2019_1"
+path = "year/2019/2019_1.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_2"
+path = "year/2019/2019_2.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_3"
+path = "year/2019/2019_3.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_4"
+path = "year/2019/2019_4.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_5"
+path = "year/2019/2019_5.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_6"
+path = "year/2019/2019_6.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_7"
+path = "year/2019/2019_7.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_8"
+path = "year/2019/2019_8.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_9"
+path = "year/2019/2019_9.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_10"
+path = "year/2019/2019_10.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_11"
+path = "year/2019/2019_11.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_12"
+path = "year/2019/2019_12.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_13"
+path = "year/2019/2019_13.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_14"
+path = "year/2019/2019_14.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_15"
+path = "year/2019/2019_15.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_16"
+path = "year/2019/2019_16.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_17"
+path = "year/2019/2019_17.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_18"
+path = "year/2019/2019_18.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_19"
+path = "year/2019/2019_19.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_20"
+path = "year/2019/2019_20.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_21"
+path = "year/2019/2019_21.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_22"
+path = "year/2019/2019_22.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_23"
+path = "year/2019/2019_23.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_24"
+path = "year/2019/2019_24.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2019_25"
+path = "year/2019/2019_25.rs"
+mode = "compile"
+hint = """ """
+
 # AoC 2020
 
 [[exercises]]
@@ -18,6 +778,138 @@ path = "year/2020/2020_3.rs"
 mode = "compile"
 hint = """ """
 
+[[exercises]]
+name = "2020_4"
+path = "year/2020/2020_4.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_5"
+path = "year/2020/2020_5.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_6"
+path = "year/2020/2020_6.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_7"
+path = "year/2020/2020_7.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_8"
+path = "year/2020/2020_8.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_9"
+path = "year/2020/2020_9.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_10"
+path = "year/2020/2020_10.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_11"
+path = "year/2020/2020_11.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_12"
+path = "year/2020/2020_12.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_13"
+path = "year/2020/2020_13.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_14"
+path = "year/2020/2020_14.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_15"
+path = "year/2020/2020_15.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_16"
+path = "year/2020/2020_16.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_17"
+path = "year/2020/2020_17.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_18"
+path = "year/2020/2020_18.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_19"
+path = "year/2020/2020_19.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_20"
+path = "year/2020/2020_20.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_21"
+path = "year/2020/2020_21.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_22"
+path = "year/2020/2020_22.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_23"
+path = "year/2020/2020_23.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_24"
+path = "year/2020/2020_24.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2020_25"
+path = "year/2020/2020_25.rs"
+mode = "compile"
+hint = """ """
+
 # AoC 2021
 
 [[exercises]]
@@ -35,5 +927,289 @@ hint = """ """
 [[exercises]]
 name = "2021_3"
 path = "year/2021/2021_3.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_4"
+path = "year/2021/2021_4.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_5"
+path = "year/2021/2021_5.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_6"
+path = "year/2021/2021_6.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_7"
+path = "year/2021/2021_7.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_8"
+path = "year/2021/2021_8.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_9"
+path = "year/2021/2021_9.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_10"
+path = "year/2021/2021_10.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_11"
+path = "year/2021/2021_11.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_12"
+path = "year/2021/2021_12.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_13"
+path = "year/2021/2021_13.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_14"
+path = "year/2021/2021_14.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_15"
+path = "year/2021/2021_15.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_16"
+path = "year/2021/2021_16.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_17"
+path = "year/2021/2021_17.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_18"
+path = "year/2021/2021_18.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_19"
+path = "year/2021/2021_19.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_20"
+path = "year/2021/2021_20.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_21"
+path = "year/2021/2021_21.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_22"
+path = "year/2021/2021_22.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_23"
+path = "year/2021/2021_23.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_24"
+path = "year/2021/2021_24.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2021_25"
+path = "year/2021/2021_25.rs"
+mode = "compile"
+hint = """ """
+
+# AoC 2022
+
+[[exercises]]
+name = "2022_1"
+path = "year/2022/2022_1.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_2"
+path = "year/2022/2022_2.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_3"
+path = "year/2022/2022_3.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_4"
+path = "year/2022/2022_4.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_5"
+path = "year/2022/2022_5.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_6"
+path = "year/2022/2022_6.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_7"
+path = "year/2022/2022_7.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_8"
+path = "year/2022/2022_8.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_9"
+path = "year/2022/2022_9.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_10"
+path = "year/2022/2022_10.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_11"
+path = "year/2022/2022_11.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_12"
+path = "year/2022/2022_12.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_13"
+path = "year/2022/2022_13.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_14"
+path = "year/2022/2022_14.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_15"
+path = "year/2022/2022_15.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_16"
+path = "year/2022/2022_16.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_17"
+path = "year/2022/2022_17.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_18"
+path = "year/2022/2022_18.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_19"
+path = "year/2022/2022_19.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_20"
+path = "year/2022/2022_20.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_21"
+path = "year/2022/2022_21.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_22"
+path = "year/2022/2022_22.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_23"
+path = "year/2022/2022_23.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_24"
+path = "year/2022/2022_24.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "2022_25"
+path = "year/2022/2022_25.rs"
 mode = "compile"
 hint = """ """

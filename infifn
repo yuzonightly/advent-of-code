@@ -1,0 +1,151 @@
+# AoC 999
+
+[[exercises]]
+name = "999_1"
+path = "year/999/999_1.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_2"
+path = "year/999/999_2.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_3"
+path = "year/999/999_3.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_4"
+path = "year/999/999_4.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_5"
+path = "year/999/999_5.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_6"
+path = "year/999/999_6.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_7"
+path = "year/999/999_7.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_8"
+path = "year/999/999_8.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_9"
+path = "year/999/999_9.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_10"
+path = "year/999/999_10.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_11"
+path = "year/999/999_11.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_12"
+path = "year/999/999_12.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_13"
+path = "year/999/999_13.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_14"
+path = "year/999/999_14.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_15"
+path = "year/999/999_15.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_16"
+path = "year/999/999_16.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_17"
+path = "year/999/999_17.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_18"
+path = "year/999/999_18.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_19"
+path = "year/999/999_19.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_20"
+path = "year/999/999_20.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_21"
+path = "year/999/999_21.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_22"
+path = "year/999/999_22.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_23"
+path = "year/999/999_23.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_24"
+path = "year/999/999_24.rs"
+mode = "compile"
+hint = """ """
+
+[[exercises]]
+name = "999_25"
+path = "year/999/999_25.rs"
+mode = "compile"
+hint = """ """
