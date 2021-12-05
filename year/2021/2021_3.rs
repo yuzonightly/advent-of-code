@@ -48,6 +48,7 @@ fn puzzle_2(data: &Vec<&str>) {
         }
         position = (position + 1usize) % line_len;
     }
+
     position = 0;
     while data_clone_more.len() as u32 > 1 {
         let mut zeros: Vec<&str> = Vec::new();
