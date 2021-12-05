@@ -76,9 +76,8 @@ fn puzzle_1(input: &Vec<Line>) {
         }
     }
     let mut overlap_count = 0;
-    for (key, value) in overlaps {
+    for (_, value) in overlaps {
         if value >= 2 {
-            println!("{:?}", key);
             overlap_count += 1;
         }
     }
@@ -117,9 +116,8 @@ fn puzzle_2(input: &Vec<Line>) {
         }
     }
     let mut overlap_count = 0;
-    for (key, value) in overlaps {
+    for (_, value) in overlaps {
         if value >= 2 {
-            println!("{:?}", key);
             overlap_count += 1;
         }
     }
