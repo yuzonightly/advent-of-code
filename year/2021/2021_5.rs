@@ -14,8 +14,8 @@ struct Line {
 
 #[derive(Clone, Debug, Eq, PartialEq)]
 struct Point {
-    x: u32,
-    y: u32,
+    x: i32,
+    y: i32,
 }
 
 impl FromStr for Lines {
@@ -54,16 +54,14 @@ fn puzzle_1(input: &Vec<Line>) {
                 } else {
                     overlaps.insert(str, 1);
                 }
-                let diff_x = temp.x as i32 - line.end.x as i32;
-                let diff_y = temp.y as i32 - line.end.y as i32;
-                if diff_x < 0 {
+                if temp.x - line.end.x < 0 {
                     temp.x = temp.x + 1;
-                } else if diff_x > 0 {
+                } else if temp.x - line.end.x > 0 {
                     temp.x = temp.x - 1;
                 }
-                if diff_y < 0 {
+                if temp.y - line.end.y < 0 {
                     temp.y = temp.y + 1;
-                } else if diff_y > 0 {
+                } else if temp.y - line.end.y > 0 {
                     temp.y = temp.y - 1;
                 }
             }
@@ -95,16 +93,14 @@ fn puzzle_2(input: &Vec<Line>) {
             } else {
                 overlaps.insert(str, 1);
             }
-            let diff_x = temp.x as i32 - line.end.x as i32;
-            let diff_y = temp.y as i32 - line.end.y as i32;
-            if diff_x < 0 {
+            if temp.x - line.end.x < 0 {
                 temp.x = temp.x + 1;
-            } else if diff_x > 0 {
+            } else if temp.x - line.end.x > 0 {
                 temp.x = temp.x - 1;
             }
-            if diff_y < 0 {
+            if temp.y - line.end.y < 0 {
                 temp.y = temp.y + 1;
-            } else if diff_y > 0 {
+            } else if temp.y - line.end.y > 0 {
                 temp.y = temp.y - 1;
             }
         }
