@@ -1,9 +1,10 @@
+use std::collections::HashMap;
 use std::error::Error;
 use std::fs;
 use std::io::{self, Write};
 use std::str::{self, FromStr};
 
-// #[derive(Clone, Debug)]
+// #[derive(Clone, Debug, Eq, PartialEq)]
 // struct Action {
 //     act: i32,
 // }

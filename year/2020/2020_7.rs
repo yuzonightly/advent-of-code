@@ -15,7 +15,8 @@ use std::str::{self, FromStr};
 //     fn from_str(s: &str) -> Result<Self, Self::Err> {}
 // }
 
-fn puzzle_1() {
+fn puzzle_1(lines: &Vec<&str>) {
+
     writeln!(io::stdout(), "Puzzle 1: {}", 1);
 }
 
@@ -24,6 +25,7 @@ fn puzzle_2() {
 }
 
 fn main() {
-    let input = fs::read_to_string("./year/2021/inputs/day25.input").expect("Error reading file.");
-    puzzle_1();
+    let input = fs::read_to_string("./year/2020/inputs/day7.input").expect("Error reading file.");
+    let lines: Vec<&str> = input.lines().collect();
+    puzzle_1(&lines);
 }
