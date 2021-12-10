@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use std::error::Error;
 use std::fs;
 use std::io::{self, Write};
@@ -16,7 +16,6 @@ use std::str::{self, FromStr};
 // }
 
 fn puzzle_1(lines: &Vec<&str>) {
-
     writeln!(io::stdout(), "Puzzle 1: {}", 1);
 }
 

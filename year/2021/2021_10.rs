@@ -16,14 +16,11 @@ fn puzzle_1(lines: &Vec<&str>) {
             if open_close.contains_key(&c) {
                 stack.push(c);
             } else {
-                let symbol = match stack.pop() {
-                    Some(c) => c,
-                    None => {
-                        continue 'next;
-                    }
+                let expected = match stack.pop() {
+                    Some(popped) => *open_close.get(&popped).unwrap(),
+                    None => c,
                 };
-                let expected = open_close.get(&symbol).unwrap();
-                if *expected != c {
+                if expected != c {
                     if c == ')' {
                         points += 3;
                     } else if c == ']' {
@@ -53,14 +50,11 @@ fn puzzle_2(lines: &Vec<&str>) {
             if open_close.contains_key(&c) {
                 stack.push(c);
             } else {
-                let symbol = match stack.pop() {
-                    Some(c) => c,
-                    None => {
-                        continue 'next;
-                    }
+                let expected = match stack.pop() {
+                    Some(popped) => *open_close.get(&popped).unwrap(),
+                    None => c,
                 };
-                let expected = open_close.get(&symbol).unwrap();
-                if *expected != c {
+                if expected != c {
                     continue 'next;
                 }
             }
