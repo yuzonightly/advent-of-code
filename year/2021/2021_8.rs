@@ -23,27 +23,6 @@ fn puzzle_1(input: &Vec<&str>) {
     writeln!(io::stdout(), "Puzzle 1: {:?}", count);
 }
 
-/**
- * c -> 2, 5
- * f -> 2, 5
- * a -> 0
- * b -> 1, 3
- * d -> 1, 3
- * e -> 4, 6
- * g -> 4, 6
- *
- * 0 = 6
- * 2 = 5
- * 3 = 5
- * 5 = 5
- * 6 = 6
- * 9 = 6
- *
- * 0 -> L d -> b d (if there is only 1 then stop) -> if all but one is in the array, then (d -> 3)
- * update the map
- * 6 -> L c ->
- */
-
 fn puzzle_2(input: &Vec<&str>) {
     let mut count = 0;
     for instance in input {
@@ -59,32 +38,49 @@ fn puzzle_2(input: &Vec<&str>) {
             .map(|s| s.chars().collect::<Vec<char>>())
             .collect();
         inp.sort_by(|a, b| a.len().cmp(&b.len()));
-        writeln!(io::stdout(), "Puzzle 2: {:?}", inp);
         let mut segment_map = HashMap::new();
         for segments in &inp {
+            let mut set: HashSet<i32>;
             if segments.len() == 2 {
-                segment_map.insert(segments[0], [2, 5]);
-                segment_map.insert(segments[1], [2, 5]);
+                set = vec![2, 5].iter().cloned().collect();
+                segment_map.insert(segments[0], set.clone());
+                segment_map.insert(segments[1], set.clone());
             } else if segments.len() == 3 {
+                set = vec![0].iter().cloned().collect();
                 for c in segments {
                     if !segment_map.contains_key(c) {
-                        segment_map.insert(*c, 0);
+                        segment_map.insert(*c, set.clone());
                     }
                 }
             } else if segments.len() == 4 {
+                set = vec![1, 3].iter().cloned().collect();
                 for c in segments {
                     if !segment_map.contains_key(c) {
-                        segment_map.insert(*c, [1, 3]);
+                        segment_map.insert(*c, set.clone());
                     }
                 }
             } else if segments.len() == 7 {
-                segment_map.insert(segments[0], [2, 5]);
-                segment_map.insert(segments[1], [2, 5]);
+                set = vec![4, 6].iter().cloned().collect();
+                for c in segments {
+                    if !segment_map.contains_key(c) {
+                        segment_map.insert(*c, set.clone());
+                    }
+                }
             }
         }
-        writeln!(io::stdout(), "Puzzle 2: {:?}", segment_map);
-        for numbers in inp {}
+        let numbers: Vec<Vec<char>> = Vec::new();
+        for segments in &inp {
+            for (key, value) in segment_map {
+                if segments.len() == 6 && !segments.contains(key) {
+                    
+                }
+
+            } 
+                
+            )
+        }
     }
+    // writeln!(io::stdout(), "Puzzle 2: {:?}", segment_map);
 }
 
 fn main() {
