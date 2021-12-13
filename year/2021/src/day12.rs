@@ -124,7 +124,7 @@ fn puzzle_2(input: &Vec<(String, String)>) {
     writeln!(io::stdout(), "Puzzle 2: {}", paths);
 }
 
-fn main() {
+pub fn run() {
     let input = fs::read_to_string("./year/2021/inputs/day12.input").expect("Error reading file.");
     let lines: Vec<&str> = input.lines().collect();
     let edges: Vec<(String, String)> = lines

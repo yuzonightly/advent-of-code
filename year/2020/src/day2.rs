@@ -21,7 +21,7 @@ struct Range {
 }
 
 impl FromStr for Passwords {
-    type Err = Box<Error>;
+    type Err = Box<dyn Error>;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         let lines: Vec<&str> = s.lines().collect();
@@ -34,7 +34,7 @@ impl FromStr for Passwords {
 }
 
 impl FromStr for Password {
-    type Err = Box<Error>;
+    type Err = Box<dyn Error>;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         let letter_repetition: Range = s.parse().unwrap();
@@ -50,7 +50,7 @@ impl FromStr for Password {
 }
 
 impl FromStr for Range {
-    type Err = Box<Error>;
+    type Err = Box<dyn Error>;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         let mut split: Vec<&str> = s.trim().split_whitespace().collect();
@@ -94,7 +94,7 @@ fn puzzle_2(passwords: &Vec<Password>) {
     writeln!(io::stdout(), "Puzzle 2: {}", valid);
 }
 
-fn main() {
+pub fn run() {
     let input = fs::read_to_string("./year/2020/inputs/day2.input").expect("Error reading file.");
     let pass: Passwords = input.parse().unwrap();
     puzzle_1(&pass.0);

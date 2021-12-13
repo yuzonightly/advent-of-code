@@ -69,7 +69,7 @@ fn puzzle_2(map: &Vec<&str>) {
     writeln!(io::stdout(), "Puzzle 2: {}", tree_mult);
 }
 
-fn main() {
+pub fn run() {
     let input = fs::read_to_string("./year/2020/inputs/day3.input").expect("Error reading file.");
     let map: Vec<&str> = input.lines().collect();
     puzzle_1(&map);

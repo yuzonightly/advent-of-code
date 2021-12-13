@@ -16,14 +16,14 @@ use std::str::{self, FromStr};
 // }
 
 fn puzzle_1() {
-    writeln!(io::stdout(), "Puzzle 1: {}", 1);
+    writeln!(io::stdout(), "Puzzle 1: {:?}", 1);
 }
 
 fn puzzle_2() {
-    writeln!(io::stdout(), "Puzzle 2: {}", 1);
+    writeln!(io::stdout(), "Puzzle 2: {:?}", 1);
 }
 
-fn main() {
-    let input = fs::read_to_string("./year/2021/inputs/day25.input").expect("Error reading file.");
+pub fn run() {
+    let input = fs::read_to_string("./year/2020/inputs/day25.input").expect("Error reading file.");
     puzzle_1();
 }

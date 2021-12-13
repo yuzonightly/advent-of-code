@@ -1,5 +1,5 @@
 [package]
-name = "advent-of-code"
+name = "advent-of-code-2020"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,3 +7,6 @@ edition = "2021"
 
 [dependencies]
 argh = "0.1.4"
+regex = "*"
+nalgebra = "*"
+raster = "*"

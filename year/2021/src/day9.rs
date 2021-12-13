@@ -76,7 +76,7 @@ fn puzzle_2(matrix: &Vec<Vec<i32>>) {
     );
 }
 
-fn main() {
+pub fn run() {
     let input = fs::read_to_string("./year/2021/inputs/day9.input").expect("Error reading file.");
     let lines: Vec<&str> = input.lines().collect();
     let matrix: Vec<Vec<i32>> = lines

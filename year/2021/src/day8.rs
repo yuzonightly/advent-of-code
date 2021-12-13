@@ -124,7 +124,7 @@ fn puzzle_2(input: &Vec<&str>) {
     writeln!(io::stdout(), "Puzzle 2: {:?}", sum);
 }
 
-fn main() {
+pub fn run() {
     let input = fs::read_to_string("./year/2021/inputs/day8.input").expect("Error reading file.");
     let lines = input.lines().collect();
     puzzle_1(&lines);

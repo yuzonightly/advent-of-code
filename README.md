@@ -1,7 +1,5 @@
 # Advent of Code
 
-rust-lang/rustlings, but with `a few modifications :)`.
-
 This repository will probably include solutions from any year _in the future_, see folder `year`.
 
 _Tested on Linux. Does not run on Windows._
@@ -10,13 +8,11 @@ _Tested on Linux. Does not run on Windows._
 
 ```bash
 cargo run -- --help
-cargo run -- file FILENAME # runs the specified file
-cargo run -- year YEAR # runs all puzzles for the specified year
+cargo run -- puzzle <year> <day> # runs the specified puzzle
 ```
 
 ### Example
 
 ```bash
-cargo run -- file 2021_1 # runs 2021_1.rs: year 2021 - day 1
-cargo run -- year 2021 # runs all puzzles for 2021
+cargo run -- puzzle 2021 1 # runs the puzzle released in 2021 day 1
 ```

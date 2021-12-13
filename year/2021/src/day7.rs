@@ -29,7 +29,7 @@ fn puzzle_2(input: &mut Vec<i32>) {
 }
 
 /// Fix second part.
-fn main() {
+pub fn run() {
     let input = fs::read_to_string("./year/2021/inputs/day7.input").expect("Error reading file.");
     let mut split: Vec<i32> = input
         .split(",")

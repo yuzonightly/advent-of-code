@@ -28,7 +28,7 @@ fn puzzle_2(numbers: &mut Vec<u32>) {
     writeln!(io::stdout(), "Puzzle 2: {}", increasing);
 }
 
-fn main() {
+pub fn run() {
     let input = fs::read_to_string("./year/2021/inputs/day1.input").expect("Error reading file.");
     let mut numbers: Vec<u32> = input.lines().map(|s| s.parse::<u32>().unwrap()).collect();
     puzzle_1(&numbers);

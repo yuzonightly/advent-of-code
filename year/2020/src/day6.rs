@@ -42,7 +42,7 @@ fn puzzle_2(groups: &Vec<&str>) {
     writeln!(io::stdout(), "Puzzle 2: {}", yes);
 }
 
-fn main() {
+pub fn run() {
     let input = fs::read_to_string("./year/2020/inputs/day6.input").expect("Error reading file.");
     let groups: Vec<&str> = input.split("\n\n").collect();
     puzzle_1(&groups);

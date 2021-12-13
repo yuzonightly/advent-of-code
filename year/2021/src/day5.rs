@@ -120,7 +120,7 @@ fn puzzle_2(input: &Vec<Line>) {
     writeln!(io::stdout(), "Puzzle 2: {}", overlap_count);
 }
 
-fn main() {
+pub fn run() {
     let input = fs::read_to_string("./year/2021/inputs/day5.input").expect("Error reading file.");
     let lines: Lines = input.parse().unwrap();
     puzzle_1(&lines.0);

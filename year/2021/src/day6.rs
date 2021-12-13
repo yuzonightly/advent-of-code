@@ -38,7 +38,7 @@ fn puzzle_2(fishies: &Vec<u32>) {
     writeln!(io::stdout(), "Puzzle 2: {}", sum);
 }
 
-fn main() {
+pub fn run() {
     let input = fs::read_to_string("./year/2021/inputs/day6.input").expect("Error reading file.");
     let values: Vec<u32> = input
         .split(",")

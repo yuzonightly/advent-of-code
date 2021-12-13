@@ -160,7 +160,7 @@ fn puzzle_2(passports: &Vec<Passport>) {
     writeln!(io::stdout(), "Puzzle 2: {}", valid_passports);
 }
 
-fn main() {
+pub fn run() {
     let input = fs::read_to_string("./year/2020/inputs/day4.input").expect("Error reading file.");
     let passports: Passports = input.parse().unwrap();
     puzzle_1(&passports.0);

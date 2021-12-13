@@ -68,7 +68,7 @@ fn puzzle_2(input: &Vec<&str>) {
     }
 }
 
-fn main() {
+pub fn run() {
     let input = fs::read_to_string("./year/2020/inputs/day5.input").expect("Error reading file.");
     let lines: Vec<&str> = input.lines().collect();
     puzzle_1(&lines);
