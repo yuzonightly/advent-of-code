@@ -16,11 +16,11 @@ use std::str::{self, FromStr};
 // }
 
 fn puzzle_1(lines: &Vec<&str>) {
-    writeln!(io::stdout(), "Puzzle 1: {}", 1);
+    println!("Puzzle 1: {}", 1);
 }
 
 fn puzzle_2() {
-    writeln!(io::stdout(), "Puzzle 2: {}", 1);
+    println!("Puzzle 2: {}", 1);
 }
 
 pub fn run() {
