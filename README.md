@@ -2,7 +2,7 @@
 
 This repository will probably include solutions from any year _in the future_, see folder `year`.
 
-_Tested on Linux. Does not run on Windows._
+_Tested on Linux. Does not run on Windows, actually, maybe it does._
 
 ## Run
 
