@@ -1,16 +1,10 @@
 use argh::FromArgs;
 
 mod day1;
-mod day2;
 mod day25;
-mod day3;
-mod day4;
-mod day5;
-mod day6;
-mod day7;
 
 #[derive(FromArgs, PartialEq, Debug)]
-/// Advent of Code 2020
+/// Advent of Code 2015
 struct Args {
     #[argh(subcommand)]
     nested: Option<Subcommands>,
@@ -44,30 +38,42 @@ fn main() {
                 1 => {
                     day1::run();
                 }
-                2 => {
-                    day2::run();
-                }
-                3 => {
-                    day3::run();
-                }
-                4 => {
-                    day4::run();
-                }
-                5 => {
-                    day5::run();
-                }
-                6 => {
-                    day6::run();
-                }
-                7 => {
-                    day7::run();
-                }
-                // 8 => {}
-                // 9 => {}
-                // 10 => {}
-                // 11 => {}
-                // 12 => {}
-                // 13 => {}
+                // 2 => {
+                //     day2::run();
+                // }
+                // 3 => {
+                //     day3::run();
+                // }
+                // 4 => {
+                //     day4::run();
+                // }
+                // 5 => {
+                //     day5::run();
+                // }
+                // 6 => {
+                //     day6::run();
+                // }
+                // 7 => {
+                //     day7::run();
+                // }
+                // 8 => {
+                //     day8::run();
+                // }
+                // 9 => {
+                //     day9::run();
+                // }
+                // 10 => {
+                //     day10::run();
+                // }
+                // 11 => {
+                //     day11::run();
+                // }
+                // 12 => {
+                //     day12::run();
+                // }
+                // 13 => {
+                //     day13::run();
+                // }
                 // 14 => {}
                 // 15 => {}
                 // 16 => {}
