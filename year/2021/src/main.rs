@@ -7,7 +7,6 @@ mod day12;
 mod day13;
 mod day14;
 mod day2;
-mod day25;
 mod day3;
 mod day4;
 mod day5;
@@ -100,9 +99,9 @@ fn main() {
                 // 22 => {}
                 // 23 => {}
                 // 24 => {}
-                25 => {
-                    day25::run();
-                }
+                // 25 => {
+                //     day25::run();
+                // }
                 _ => {
                     println!("Day {} is invalid/not solved yet", day);
                 }

@@ -1,7 +1,6 @@
 use argh::FromArgs;
 
 mod day1;
-mod day25;
 
 #[derive(FromArgs, PartialEq, Debug)]
 /// Advent of Code 2015
@@ -85,9 +84,9 @@ fn main() {
                 // 22 => {}
                 // 23 => {}
                 // 24 => {}
-                25 => {
-                    day25::run();
-                }
+                // 25 => {
+                //     day25::run();
+                // }
                 _ => {
                     println!("Day {} is invalid/not solved yet", day);
                 }
