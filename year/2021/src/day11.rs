@@ -1,8 +1,6 @@
-use std::collections::{HashMap, HashSet};
-use std::error::Error;
 use std::fs;
 use std::io::{self, Write};
-use std::str::{self, FromStr};
+use std::str::{self};
 
 fn find_edges(i: usize, j: usize, rows: usize, cols: usize) -> (usize, usize, usize, usize) {
     let (x1, y1) = (

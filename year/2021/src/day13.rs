@@ -1,11 +1,7 @@
 use std::collections::{HashMap, HashSet};
-use std::error::Error;
 use std::fs;
 use std::io::{self, Write};
-use std::str::{self, FromStr};
-
-use plotters::coord::types::RangedCoordf32;
-use plotters::prelude::*;
+use std::str::{self};
 
 fn puzzle_1(mut coordinates: HashSet<(u32, u32)>, folds: &Vec<(char, u32)>) {
     let (fold_coord, fold_index) = folds[0];
@@ -59,20 +55,40 @@ fn puzzle_2(mut coordinates: HashSet<(u32, u32)>, folds: &Vec<(char, u32)>) {
         }
         coordinates = coordinates_clone;
     }
-
-    let root = BitMapBackend::new("./year/2021/day13_code.png", (500, 500)).into_drawing_area();
-    root.fill(&RGBColor(255, 255, 255));
-    let root = root.apply_coord_spec(Cartesian2d::<RangedCoordf32, RangedCoordf32>::new(
-        0f32..50f32,
-        0f32..50f32,
-        (0..500, 0..500),
-    ));
-    let dot_and_label = |x: f32, y: f32| {
-        return EmptyElement::at((x, y))
-            + Circle::new((0, 0), 3, ShapeStyle::from(&BLACK).filled());
-    };
+    let mut print: HashMap<usize, Vec<char>> = HashMap::new();
     for (x, y) in &coordinates {
-        root.draw(&dot_and_label(*x as f32, *y as f32));
+        if let Some(s) = print.get_mut(&(*y as usize)) {
+            let line_length = s.len() as u32;
+            if *x + 1 > line_length {
+                let insert_length = *x + 1 - line_length;
+                let mut chars = Vec::new();
+                for i in 0..insert_length {
+                    if i == insert_length - 1 {
+                        chars.push('#');
+                    } else {
+                        chars.push(' ');
+                    }
+                }
+                s.append(&mut chars);
+            } else {
+                s[*x as usize] = '#';
+            }
+        } else {
+            let mut chars = Vec::new();
+            for i in 0..*x + 1 {
+                if i == *x {
+                    chars.push('#');
+                } else {
+                    chars.push(' ');
+                }
+            }
+            print.insert(*y as usize, chars);
+        }
+    }
+    for i in 0..print.len() {
+        let chars = print.get(&i).unwrap();
+        let string: String = chars.into_iter().collect();
+        println!("{}", string);
     }
 }
 

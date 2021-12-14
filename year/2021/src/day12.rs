@@ -1,8 +1,7 @@
-use std::collections::{HashMap, HashSet};
-use std::error::Error;
+use std::collections::{HashSet};
 use std::fs;
 use std::io::{self, Write};
-use std::str::{self, FromStr};
+use std::str::{self};
 
 fn recursive_single(
     edges: &Vec<(String, String)>,

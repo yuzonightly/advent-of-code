@@ -1,8 +1,5 @@
-use std::collections::HashMap;
-use std::error::Error;
 use std::fs;
 use std::io::{self, Write};
-use std::str::{self, FromStr};
 
 fn puzzle_1(input: &mut Vec<i32>) {
     input.sort();

@@ -1,8 +1,5 @@
-use std::collections::HashMap;
-use std::error::Error;
 use std::fs;
 use std::io::{self, Write};
-use std::str::{self, FromStr};
 
 fn puzzle_1(fishies: &Vec<u32>) {
     let mut map = [0u32; 9];

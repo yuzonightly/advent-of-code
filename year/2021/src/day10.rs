@@ -1,8 +1,7 @@
-use std::collections::{HashMap, HashSet};
-use std::error::Error;
+use std::collections::{HashMap};
 use std::fs;
 use std::io::{self, Write};
-use std::str::{self, FromStr};
+use std::str::{self};
 
 fn puzzle_1(lines: &Vec<&str>) {
     let mut points = 0;
