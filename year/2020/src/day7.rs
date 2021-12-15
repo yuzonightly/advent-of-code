@@ -1,7 +1,6 @@
 use std::fs;
 // use std::collections::{HashMap, HashSet};
 // use std::error::Error;
-// use std::io::{self, Write};
 // use std::str::{self, FromStr};
 
 fn puzzle_1(lines: &Vec<&str>) {

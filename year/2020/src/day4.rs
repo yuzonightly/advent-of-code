@@ -1,7 +1,6 @@
 use std::collections::HashMap;
 use std::error::Error;
 use std::fs;
-use std::io::{self, Write};
 use std::str::{self, FromStr};
 
 #[derive(Clone, Debug)]
@@ -45,7 +44,7 @@ fn puzzle_1(passports: &Vec<Passport>) {
             }
         }
     }
-    writeln!(io::stdout(), "Puzzle 1: {}", valid_passports);
+    println!("Puzzle 1: {}", valid_passports);
 }
 
 fn puzzle_2(passports: &Vec<Passport>) {
@@ -157,7 +156,7 @@ fn puzzle_2(passports: &Vec<Passport>) {
             };
         }
     }
-    writeln!(io::stdout(), "Puzzle 2: {}", valid_passports);
+    println!("Puzzle 2: {}", valid_passports);
 }
 
 pub fn run() {

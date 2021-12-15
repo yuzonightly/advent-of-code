@@ -1,6 +1,5 @@
 use std::collections::HashMap;
 use std::fs;
-use std::io::{self, Write};
 use std::str::{self};
 
 fn puzzle_1(groups: &Vec<&str>) {
@@ -15,7 +14,7 @@ fn puzzle_1(groups: &Vec<&str>) {
         }
         yes += map.len();
     }
-    writeln!(io::stdout(), "Puzzle 1: {}", yes);
+    println!("Puzzle 1: {}", yes);
 }
 
 fn puzzle_2(groups: &Vec<&str>) {
@@ -38,7 +37,7 @@ fn puzzle_2(groups: &Vec<&str>) {
             }
         }
     }
-    writeln!(io::stdout(), "Puzzle 2: {}", yes);
+    println!("Puzzle 2: {}", yes);
 }
 
 pub fn run() {

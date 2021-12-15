@@ -1,6 +1,5 @@
-use std::collections::{HashMap};
+use std::collections::HashMap;
 use std::fs;
-use std::io::{self, Write};
 use std::str::{self};
 
 fn puzzle_1(lines: &Vec<&str>) {
@@ -34,7 +33,7 @@ fn puzzle_1(lines: &Vec<&str>) {
             }
         }
     }
-    writeln!(io::stdout(), "Puzzle 1: {}", points);
+    println!("Puzzle 1: {}", points);
 }
 
 fn puzzle_2(lines: &Vec<&str>) {
@@ -75,7 +74,7 @@ fn puzzle_2(lines: &Vec<&str>) {
         scores.push(score);
     }
     scores.sort();
-    writeln!(io::stdout(), "Puzzle 2: {}", scores[scores.len() / 2]);
+    println!("Puzzle 2: {}", scores[scores.len() / 2]);
 }
 
 pub fn run() {

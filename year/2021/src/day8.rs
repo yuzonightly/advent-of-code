@@ -1,6 +1,5 @@
 use std::collections::{HashMap, HashSet};
 use std::fs;
-use std::io::{self, Write};
 use std::str::{self};
 
 fn puzzle_1(input: &Vec<&str>) {
@@ -19,7 +18,7 @@ fn puzzle_1(input: &Vec<&str>) {
             }
         }
     }
-    writeln!(io::stdout(), "Puzzle 1: {:?}", count);
+    println!("Puzzle 1: {:?}", count);
 }
 
 fn puzzle_2(input: &Vec<&str>) {
@@ -120,7 +119,7 @@ fn puzzle_2(input: &Vec<&str>) {
         }
         sum += sum_instance;
     }
-    writeln!(io::stdout(), "Puzzle 2: {:?}", sum);
+    println!("Puzzle 2: {:?}", sum);
 }
 
 pub fn run() {

@@ -1,5 +1,4 @@
 use std::fs;
-use std::io::{self, Write};
 
 fn puzzle_1(input: &mut Vec<i32>) {
     input.sort();
@@ -9,7 +8,7 @@ fn puzzle_1(input: &mut Vec<i32>) {
         .map(|s| (*s as i32 - median as i32).abs())
         .collect();
     let distance_sum: i32 = distances.iter().sum();
-    writeln!(io::stdout(), "Puzzle 1: {}", distance_sum);
+    println!("Puzzle 1: {}", distance_sum);
 }
 
 fn puzzle_2(input: &mut Vec<i32>) {
@@ -22,7 +21,7 @@ fn puzzle_2(input: &mut Vec<i32>) {
             y * (y + 1) / 2
         })
         .collect();
-    writeln!(io::stdout(), "Puzzle 2: {}", distances.iter().sum::<i32>());
+    println!("Puzzle 2: {}", distances.iter().sum::<i32>());
 }
 
 /// Fix second part.

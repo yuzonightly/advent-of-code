@@ -1,6 +1,5 @@
 use std::error::Error;
 use std::fs;
-use std::io::{self, Write};
 use std::str::{self, FromStr};
 
 #[derive(Clone, Debug)]
@@ -26,7 +25,7 @@ impl FromStr for Action {
     type Err = Box<dyn Error>;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        let mut split: Vec<&str> = s.trim().split_whitespace().collect();
+        let split: Vec<&str> = s.trim().split_whitespace().collect();
         let act: String = split[0].to_owned();
         let value: i32 = split[1].parse()?;
         let action: Action = match act.as_str() {
@@ -76,8 +75,7 @@ fn puzzle_1(submarine: &mut Submarine, actions: &Vec<Action>) {
     for act in actions {
         submarine.perform_action(&act);
     }
-    writeln!(
-        io::stdout(),
+    println!(
         "Puzzle 1: {} * {} = {}",
         submarine.position.horizontal,
         submarine.position.depth,
@@ -89,8 +87,7 @@ fn puzzle_2(submarine: &mut Submarine, actions: &Vec<Action>) {
     for act in actions {
         submarine.perform_correct_action(&act);
     }
-    writeln!(
-        io::stdout(),
+    println!(
         "Puzzle 2: {} * {} = {}",
         submarine.position.horizontal,
         submarine.position.depth,

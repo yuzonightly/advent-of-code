@@ -1,5 +1,4 @@
 use std::fs;
-use std::io::{self, Write};
 
 fn puzzle_1(data: &Vec<&str>) {
     let line_len = data[0].len();
@@ -23,7 +22,7 @@ fn puzzle_1(data: &Vec<&str>) {
     let ones = (2u32.pow(line_len as u32)) - 1;
     let decimal = u32::from_str_radix(&bits, 2).unwrap();
     let inverted = ones - decimal;
-    writeln!(io::stdout(), "Puzzle 1: {}", decimal * inverted);
+    println!("Puzzle 1: {}", decimal * inverted);
 }
 
 fn puzzle_2(data: &Vec<&str>) {
@@ -69,7 +68,7 @@ fn puzzle_2(data: &Vec<&str>) {
     }
     let fewer = u32::from_str_radix(&data_clone_fewer[0], 2).unwrap();
     let more = u32::from_str_radix(&data_clone_more[0], 2).unwrap();
-    writeln!(io::stdout(), "Puzzle 2: {}", fewer * more);
+    println!("Puzzle 2: {}", fewer * more);
 }
 
 pub fn run() {

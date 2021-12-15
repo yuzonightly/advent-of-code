@@ -1,6 +1,5 @@
 use std::collections::HashSet;
 use std::fs;
-use std::io::{self, Write};
 use std::str::{self};
 
 fn find_edges(i: usize, j: usize, rows: usize, cols: usize) -> (usize, usize, usize, usize) {
@@ -29,7 +28,7 @@ fn puzzle_1(matrix: &Vec<Vec<i32>>) {
             sum += matrix[i][j] + 1;
         }
     }
-    writeln!(io::stdout(), "Puzzle 1: {}", sum);
+    println!("Puzzle 1: {}", sum);
 }
 
 fn puzzle_2(matrix: &Vec<Vec<i32>>) {
@@ -68,11 +67,7 @@ fn puzzle_2(matrix: &Vec<Vec<i32>>) {
         }
     }
     basins.sort_by(|a, b| b.cmp(a));
-    writeln!(
-        io::stdout(),
-        "Puzzle 2: {}",
-        basins[0] * basins[1] * basins[2]
-    );
+    println!("Puzzle 2: {}", basins[0] * basins[1] * basins[2]);
 }
 
 pub fn run() {

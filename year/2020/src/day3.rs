@@ -1,5 +1,4 @@
 use std::fs;
-use std::io::{self, Write};
 
 struct Config {
     right: usize,
@@ -33,7 +32,7 @@ fn puzzle_1(map: &Vec<&str>) {
         }
         lineno += config.down;
     }
-    writeln!(io::stdout(), "Puzzle 1: {}", trees);
+    println!("Puzzle 1: {}", trees);
 }
 
 fn puzzle_2(map: &Vec<&str>) {
@@ -66,7 +65,7 @@ fn puzzle_2(map: &Vec<&str>) {
         }
         tree_mult *= trees;
     }
-    writeln!(io::stdout(), "Puzzle 2: {}", tree_mult);
+    println!("Puzzle 2: {}", tree_mult);
 }
 
 pub fn run() {

@@ -1,5 +1,4 @@
 use std::fs;
-use std::io::{self, Write};
 
 fn puzzle_1(numbers: &Vec<u32>) {
     let mut increasing = 0;
@@ -10,7 +9,7 @@ fn puzzle_1(numbers: &Vec<u32>) {
         }
         previous = numbers[i];
     }
-    writeln!(io::stdout(), "Puzzle 1: {}", increasing);
+    println!("Puzzle 1: {}", increasing);
 }
 
 fn puzzle_2(numbers: &mut Vec<u32>) {
@@ -25,7 +24,7 @@ fn puzzle_2(numbers: &mut Vec<u32>) {
         previous = sum;
         numbers.drain(0..1);
     }
-    writeln!(io::stdout(), "Puzzle 2: {}", increasing);
+    println!("Puzzle 2: {}", increasing);
 }
 
 pub fn run() {

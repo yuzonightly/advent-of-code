@@ -1,6 +1,5 @@
 use std::collections::{HashMap, HashSet};
 use std::fs;
-use std::io::{self, Write};
 use std::str::{self};
 
 fn puzzle_1(mut coordinates: HashSet<(u32, u32)>, folds: &Vec<(char, u32)>) {
@@ -27,7 +26,7 @@ fn puzzle_1(mut coordinates: HashSet<(u32, u32)>, folds: &Vec<(char, u32)>) {
         }
     }
     coordinates = coordinates_clone;
-    writeln!(io::stdout(), "Puzzle 1: {:?}", coordinates.len());
+    println!("Puzzle 1: {:?}", coordinates.len());
 }
 
 fn puzzle_2(mut coordinates: HashSet<(u32, u32)>, folds: &Vec<(char, u32)>) {
@@ -55,6 +54,7 @@ fn puzzle_2(mut coordinates: HashSet<(u32, u32)>, folds: &Vec<(char, u32)>) {
         }
         coordinates = coordinates_clone;
     }
+    println!("{}", "Puzzle 2:");
     let mut print: HashMap<usize, Vec<char>> = HashMap::new();
     for (x, y) in &coordinates {
         if let Some(s) = print.get_mut(&(*y as usize)) {
@@ -95,7 +95,7 @@ fn puzzle_2(mut coordinates: HashSet<(u32, u32)>, folds: &Vec<(char, u32)>) {
 pub fn run() {
     let input = fs::read_to_string("./year/2021/inputs/day13.input").expect("Error reading file.");
     let coord_fold: Vec<&str> = input.split("\n\n").collect();
-    let mut coord: HashSet<(u32, u32)> = coord_fold[0]
+    let coord: HashSet<(u32, u32)> = coord_fold[0]
         .lines()
         .map(|s| {
             let split: Vec<&str> = s.split(",").collect();
@@ -115,7 +115,7 @@ pub fn run() {
             )
         })
         .collect();
-    let mut coord_clone = coord.clone();
+    let coord_clone = coord.clone();
     puzzle_1(coord, &folds);
     puzzle_2(coord_clone, &folds);
 }

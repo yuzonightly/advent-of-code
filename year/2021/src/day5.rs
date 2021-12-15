@@ -1,7 +1,6 @@
 use std::collections::HashMap;
 use std::error::Error;
 use std::fs;
-use std::io::{self, Write};
 use std::str::{self, FromStr};
 
 struct Lines(Vec<Line>);
@@ -79,7 +78,7 @@ fn puzzle_1(input: &Vec<Line>) {
             overlap_count += 1;
         }
     }
-    writeln!(io::stdout(), "Puzzle 1: {}", overlap_count);
+    println!("Puzzle 1: {}", overlap_count);
 }
 
 fn puzzle_2(input: &Vec<Line>) {
@@ -117,7 +116,7 @@ fn puzzle_2(input: &Vec<Line>) {
             overlap_count += 1;
         }
     }
-    writeln!(io::stdout(), "Puzzle 2: {}", overlap_count);
+    println!("Puzzle 2: {}", overlap_count);
 }
 
 pub fn run() {

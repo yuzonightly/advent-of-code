@@ -1,5 +1,4 @@
 use std::fs;
-use std::io::{self, Write};
 use std::str::{self};
 
 fn find_edges(i: usize, j: usize, rows: usize, cols: usize) -> (usize, usize, usize, usize) {
@@ -23,7 +22,7 @@ fn puzzle_1(matrix: &Vec<Vec<i32>>) {
     let mut input = matrix.clone();
     let rows = input.len();
     let cols = input[0].len();
-    let mut flash_set: Vec<(usize, usize)> = Vec::new();
+    let mut flash_set: Vec<(usize, usize)>;
     let mut flash_count = 0;
     for _ in 0..100 {
         flash_set = Vec::new();
@@ -54,14 +53,14 @@ fn puzzle_1(matrix: &Vec<Vec<i32>>) {
             }
         }
     }
-    writeln!(io::stdout(), "Puzzle 1: {}", flash_count);
+    println!("Puzzle 1: {}", flash_count);
 }
 
 fn puzzle_2(matrix: &Vec<Vec<i32>>) {
     let mut input = matrix.clone();
     let rows = input.len();
     let cols = input[0].len();
-    let mut flash_set: Vec<(usize, usize)> = Vec::new();
+    let mut flash_set: Vec<(usize, usize)>;
     let mut flash_count = 0;
     let mut loop_index = 0;
     loop {
@@ -98,7 +97,7 @@ fn puzzle_2(matrix: &Vec<Vec<i32>>) {
             break;
         }
     }
-    writeln!(io::stdout(), "Puzzle 2: {}", loop_index);
+    println!("Puzzle 2: {}", loop_index);
 }
 
 pub fn run() {

@@ -1,5 +1,4 @@
 use std::fs;
-use std::io::{self, Write};
 
 fn puzzle_1(fishies: &Vec<u32>) {
     let mut map = [0u32; 9];
@@ -7,7 +6,7 @@ fn puzzle_1(fishies: &Vec<u32>) {
         map[i] = fishies.iter().filter(|&n| *n == i as u32).count() as u32;
     }
     let mut zero = 0;
-    for i in 0..80 {
+    for _ in 0..80 {
         let temp0 = map[zero];
         zero = (zero + 1) % 7;
         map[(zero + 6) % 7] += map[7];
@@ -15,7 +14,7 @@ fn puzzle_1(fishies: &Vec<u32>) {
         map[8] = temp0;
     }
     let sum: u32 = map.iter().sum();
-    writeln!(io::stdout(), "Puzzle 1: {}", sum);
+    println!("Puzzle 1: {}", sum);
 }
 
 fn puzzle_2(fishies: &Vec<u32>) {
@@ -24,7 +23,7 @@ fn puzzle_2(fishies: &Vec<u32>) {
         map[i] = fishies.iter().filter(|&n| *n == i as u32).count() as u64;
     }
     let mut zero = 0;
-    for i in 0..256 {
+    for _ in 0..256 {
         let temp0 = map[zero];
         zero = (zero + 1) % 7;
         map[(zero + 6) % 7] += map[7];
@@ -32,7 +31,7 @@ fn puzzle_2(fishies: &Vec<u32>) {
         map[8] = temp0;
     }
     let sum: u64 = map.iter().sum();
-    writeln!(io::stdout(), "Puzzle 2: {}", sum);
+    println!("Puzzle 2: {}", sum);
 }
 
 pub fn run() {

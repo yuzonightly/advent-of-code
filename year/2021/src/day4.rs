@@ -1,6 +1,5 @@
 use std::error::Error;
 use std::fs;
-use std::io::{self, Write};
 use std::str::{self, FromStr};
 
 #[derive(Clone, Debug)]
@@ -41,11 +40,9 @@ impl FromStr for Game {
 }
 
 fn check_board(board: &Vec<Vec<i32>>) -> bool {
-    let mut row = true;
-    let mut col = true;
     for i in 0..board.len() {
-        row = true;
-        col = true;
+        let mut row = true;
+        let mut col = true;
         for j in 0..board[i].len() {
             if board[i][j] != -1 {
                 row = false;
@@ -66,7 +63,7 @@ fn puzzle_1(bingo: &mut Game) {
     let calls = &bingo.calls;
     'outer: for call in calls {
         for board_index in 0..bingo.boards.len() {
-            let mut board = &mut bingo.boards[board_index];
+            let board = &mut bingo.boards[board_index];
             for i in 0..board.0.len() {
                 for j in 0..board.0[i].len() {
                     if board.0[i][j] == *call {
@@ -84,7 +81,7 @@ fn puzzle_1(bingo: &mut Game) {
                                 }
                                 sum
                             };
-                            writeln!(io::stdout(), "Puzzle 1: {}", call * sum);
+                            println!("Puzzle 1: {}", call * sum);
                             break 'outer;
                         }
                     }
@@ -101,7 +98,7 @@ fn puzzle_2(bingo: &mut Game) {
     let mut board_completion = 0;
     'outer: for call in calls {
         for board_index in 0..bingo.boards.len() {
-            let mut board = &mut bingo.boards[board_index];
+            let board = &mut bingo.boards[board_index];
             for i in 0..board.0.len() {
                 for j in 0..board.0[i].len() {
                     if check_board(&board.0) {
@@ -124,7 +121,7 @@ fn puzzle_2(bingo: &mut Game) {
                                     }
                                     sum
                                 };
-                                writeln!(io::stdout(), "Puzzle 2: {}", call * sum);
+                                println!("Puzzle 2: {}", call * sum);
                                 break 'outer;
                             }
                         }

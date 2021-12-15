@@ -1,6 +1,5 @@
-use std::collections::{HashSet};
+use std::collections::HashSet;
 use std::fs;
-use std::io::{self, Write};
 use std::str::{self};
 
 fn recursive_single(
@@ -28,7 +27,6 @@ fn recursive_single(
 
 fn puzzle_1(input: &Vec<(String, String)>) {
     let mut paths = 0;
-    let mut edges = input.clone();
     let mut new_edges = Vec::new();
     for (start, end) in input {
         if start.eq("end") || end.eq("start") {
@@ -45,7 +43,7 @@ fn puzzle_1(input: &Vec<(String, String)>) {
             paths += recursive_single(&new_edges, end.to_string(), &mut Vec::new());
         }
     }
-    writeln!(io::stdout(), "Puzzle 1: {}", paths);
+    println!("Puzzle 1: {}", paths);
 }
 
 fn recursive_twice(
@@ -120,7 +118,7 @@ fn puzzle_2(input: &Vec<(String, String)>) {
             paths += recursive_single(&new_edges, end.to_string(), &mut Vec::new());
         }
     }
-    writeln!(io::stdout(), "Puzzle 2: {}", paths);
+    println!("Puzzle 2: {}", paths);
 }
 
 pub fn run() {

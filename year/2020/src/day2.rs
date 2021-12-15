@@ -1,6 +1,5 @@
 use std::error::Error;
 use std::fs;
-use std::io::{self, Write};
 use std::str::{self, FromStr};
 
 #[derive(Clone, Debug)]
@@ -38,7 +37,7 @@ impl FromStr for Password {
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         let letter_repetition: Range = s.parse().unwrap();
-        let mut split: Vec<&str> = s.trim().split_whitespace().collect();
+        let split: Vec<&str> = s.trim().split_whitespace().collect();
         let letter: char = split[1].chars().nth(0).unwrap();
         let password: String = split[2].parse().unwrap();
         Ok(Password {
@@ -69,7 +68,7 @@ fn puzzle_1(passwords: &Vec<Password>) {
             valid += 1;
         }
     }
-    writeln!(io::stdout(), "Puzzle 1: {}", valid);
+    println!("Puzzle 1: {}", valid);
 }
 
 fn puzzle_2(passwords: &Vec<Password>) {
@@ -91,7 +90,7 @@ fn puzzle_2(passwords: &Vec<Password>) {
             valid += 1;
         }
     }
-    writeln!(io::stdout(), "Puzzle 2: {}", valid);
+    println!("Puzzle 2: {}", valid);
 }
 
 pub fn run() {

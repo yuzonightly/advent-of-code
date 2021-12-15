@@ -1,5 +1,4 @@
 use std::fs;
-use std::io::{self, Write};
 use std::str::{self};
 
 fn puzzle_1(input: &Vec<&str>) {
@@ -28,11 +27,10 @@ fn puzzle_1(input: &Vec<&str>) {
             row8_plus_col = temp;
         }
     }
-    writeln!(io::stdout(), "Puzzle 1: {}", row8_plus_col);
+    println!("Puzzle 1: {}", row8_plus_col);
 }
 
 fn puzzle_2(input: &Vec<&str>) {
-    let mut row8_plus_col: u32 = 0;
     let mut ids: Vec<u32> = Vec::new();
     for line in input {
         let mut lower_row: u32 = 0;
@@ -61,7 +59,7 @@ fn puzzle_2(input: &Vec<&str>) {
     ids.sort();
     for i in 0..ids.len() - 1 {
         if ids[i] + 1 != ids[i + 1] {
-            writeln!(io::stdout(), "Puzzle 2: {:?}", ids[i] + 1);
+            println!("Puzzle 2: {:?}", ids[i] + 1);
             std::process::exit(0);
         }
     }
