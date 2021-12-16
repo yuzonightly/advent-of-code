@@ -1,3 +1,5 @@
+use std::cmp::Reverse;
+use std::collections::BinaryHeap;
 use std::fs;
 use std::str::{self};
 
@@ -15,39 +17,38 @@ fn puzzle_1(matrix: &Vec<Vec<u32>>) {
     let col_len: usize = matrix[0].len();
     let row_len5: usize = row_len;
     let col_len5: usize = col_len;
-    let mut distances: Vec<Vec<Option<u32>>> = vec![vec![None::<u32>; col_len5]; row_len5];
-    let mut queue: Vec<((usize, usize), u32)> = vec![((0, 0), 0)];
-    'next: while queue.len() > 0 {
-        let ((_, _), min_risk) = queue.iter().min_by(|a, b| a.1.cmp(&b.1)).unwrap();
-        let min_risk_index = queue.iter().position(|&r| r.1 == *min_risk).unwrap();
-        let ((i, j), risk) = queue.remove(min_risk_index);
+    let goal = (row_len5 - 1, col_len5 - 1);
+    let mut distances: Vec<Vec<u32>> = vec![vec![u32::MAX; col_len5]; row_len5];
+    let mut queue = BinaryHeap::new();
+    queue.push(Reverse((0u32, 0usize, 0usize)));
+    while let Some(Reverse((risk, i, j))) = queue.pop() {
         let block = ((i / row_len) + (j / col_len)) as u32;
-        let original_value = matrix[i % row_len][j % col_len];
-        let temp = ((original_value + block - 1) % 9) + 1;
+        let original_risk = matrix[i % row_len][j % col_len];
+        let temp = ((original_risk + block - 1) % 9) + 1;
         let current_risk: u32 = if temp == 0 {
             temp + risk + 1
         } else {
             temp + risk
         };
-        if distances[i][j] == None || distances[i][j].unwrap() > current_risk {
-            distances[i][j] = Some(current_risk);
+        if current_risk < distances[i][j] {
+            distances[i][j] = current_risk;
         } else {
-            continue 'next;
+            continue;
         }
-        if i == row_len5 - 1 && j == col_len5 - 1 {
-            break 'next;
+        if goal == (i, j) {
+            break;
         }
         let (i1, j1, i2, j2) = find_edges(i, j, row_len5, col_len5);
         let adjacents = vec![(i1, j), (i2, j), (i, j1), (i, j2)];
         for (x, y) in adjacents {
             if !(x == i && y == j) {
-                queue.push(((x, y), distances[i][j].unwrap()));
+                queue.push(Reverse((current_risk, x, y)));
             }
         }
     }
     println!(
         "Puzzle 1: {:?}",
-        distances[row_len5 - 1][col_len5 - 1].unwrap() - distances[0][0].unwrap()
+        distances[row_len5 - 1][col_len5 - 1] - distances[0][0]
     );
 }
 
@@ -56,36 +57,38 @@ fn puzzle_2(matrix: &Vec<Vec<u32>>) {
     let col_len: usize = matrix[0].len();
     let row_len5: usize = row_len * 5;
     let col_len5: usize = col_len * 5;
-    let mut distances: Vec<Vec<Option<u32>>> = vec![vec![None::<u32>; col_len5]; row_len5];
-    let mut queue: Vec<((usize, usize), u32)> = vec![((0, 0), 0)];
-    'next: while queue.len() > 0 {
-        let ((_, _), min_risk) = queue.iter().min_by(|a, b| a.1.cmp(&b.1)).unwrap();
-        let min_risk_index = queue.iter().position(|&r| r.1 == *min_risk).unwrap();
-        let ((i, j), risk) = queue.remove(min_risk_index);
+    let goal = (row_len5 - 1, col_len5 - 1);
+    let mut distances: Vec<Vec<u32>> = vec![vec![u32::MAX; col_len5]; row_len5];
+    let mut queue = BinaryHeap::new();
+    queue.push(Reverse((0u32, 0usize, 0usize)));
+    while let Some(Reverse((risk, i, j))) = queue.pop() {
         let block = ((i / row_len) + (j / col_len)) as u32;
-        let original_value = matrix[i % row_len][j % col_len];
-        let temp = ((original_value + block - 1) % 9) + 1;
+        let original_risk = matrix[i % row_len][j % col_len];
+        let temp = ((original_risk + block - 1) % 9) + 1;
         let current_risk: u32 = if temp == 0 {
             temp + risk + 1
         } else {
             temp + risk
         };
-        if distances[i][j] == None || distances[i][j].unwrap() > current_risk {
-            distances[i][j] = Some(current_risk);
+        if current_risk < distances[i][j] {
+            distances[i][j] = current_risk;
         } else {
-            continue 'next;
+            continue;
+        }
+        if goal == (i, j) {
+            break;
         }
         let (i1, j1, i2, j2) = find_edges(i, j, row_len5, col_len5);
         let adjacents = vec![(i1, j), (i2, j), (i, j1), (i, j2)];
         for (x, y) in adjacents {
             if !(x == i && y == j) {
-                queue.push(((x, y), distances[i][j].unwrap()));
+                queue.push(Reverse((current_risk, x, y)));
             }
         }
     }
     println!(
         "Puzzle 2: {:?}",
-        distances[row_len5 - 1][col_len5 - 1].unwrap() - distances[0][0].unwrap()
+        distances[row_len5 - 1][col_len5 - 1] - distances[0][0]
     );
 }
 
