@@ -10,11 +10,10 @@ use std::str::{self, FromStr};
 
 // impl FromStr for Action {
 //     type Err = Box<dyn Error>;
-
 //     fn from_str(s: &str) -> Result<Self, Self::Err> {}
 // }
 
-fn puzzle_1(input: ) {
+fn puzzle_1() {
     println!("Puzzle 1: {:?}", 1);
 }
 
