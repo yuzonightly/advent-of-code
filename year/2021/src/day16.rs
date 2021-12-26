@@ -89,6 +89,7 @@ fn puzzle_1(input: &Vec<u8>) {
             }
         }
     }
+    
     println!("Puzzle 1: {:?}", version_count);
 }
 
