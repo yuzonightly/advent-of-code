@@ -5,20 +5,6 @@ use std::str::{self, FromStr};
 
 use hex;
 
-/**
- * Multiple of 4
- *
- * 0-3: version
- * 4-7: type --- 4: literal value (single binary number); the binary number is padded (until multiple of 4)---
- *
- * type id != 4 is a operator
- *
- * Operator packet has a length id: 0 or 1.
- * 0: next 15 bits length of all subpackets
- * 1: next 11 bits is the number of subpackets
- *
- */
-
 // Returns the next X bits, where X == next
 fn next_bits(position: &mut usize, input: &Vec<u8>, next: usize) -> u64 {
     let mut bits = 0u64;
@@ -32,6 +18,7 @@ fn next_bits(position: &mut usize, input: &Vec<u8>, next: usize) -> u64 {
     bits
 }
 
+// Returns the complete literal from the packet
 fn extract_literal(position: &mut usize, input: &Vec<u8>) -> u64 {
     let mut literal = 0u64;
     let mut last_group = 1;
@@ -43,8 +30,10 @@ fn extract_literal(position: &mut usize, input: &Vec<u8>) -> u64 {
     literal
 }
 
-// Either finish the process (true) or increment 'position' to point at the next packet
-fn padding(position: &mut usize, input: &Vec<u8>, current_packet_size: usize) -> bool {
+// Either finish the process (return true) or just increment
+// 'position' until the next packet
+// Obs: paddings are applied at the end of packets, not sub-packets
+fn solve_padding(position: &mut usize, input: &Vec<u8>, current_packet_size: usize) -> bool {
     let mut literal_packet_size = current_packet_size;
     while literal_packet_size % 4 != 0 {
         literal_packet_size += 1;
@@ -63,33 +52,100 @@ fn padding(position: &mut usize, input: &Vec<u8>, current_packet_size: usize) ->
     false
 }
 
+#[derive(PartialEq)]
+enum SubpacketLengthType {
+    // Length of subpackets
+    Length,
+    // Number of subpackets
+    Number,
+}
+
+struct Packet {
+    packet_length_type: SubpacketLengthType,
+    length_field: usize,
+    accumulated_length: usize,
+}
+
 fn puzzle_1(input: &Vec<u8>) {
     let mut position: usize = 0;
+    let mut version_count = 0u32;
+    let mut packet_stack: Vec<Packet> = Vec::new();
+    let mut position_ = 0;
     let mut end = false;
-    let mut version_count = 0;
     while !end {
         let version_id = next_bits(&mut position, input, 3) as u8;
-        version_count += version_id;
+        version_count += version_id as u32;
         let type_id = next_bits(&mut position, input, 3) as u8;
+        let past_position = position;
         match type_id {
             4 => {
-                let mut packet_size = 6;
-                let mut position_ = position;
                 let literal = extract_literal(&mut position, input);
-                packet_size += position - position_;
-                end = padding(&mut position, input, packet_size);
+                let current_packet_length = 6 + position - past_position;
+                let mut new_length = 0usize;
+                if let Some(packet) = packet_stack.pop() {
+                    if packet.packet_length_type == SubpacketLengthType::Length {
+                        new_length = packet.length_field - current_packet_length;
+                    } else if packet.packet_length_type == SubpacketLengthType::Number {
+                        new_length = packet.length_field - 1;
+                    }
+                    if new_length > 0 {
+                        packet_stack.push(Packet {
+                            packet_length_type: packet.packet_length_type,
+                            length_field: new_length,
+                            accumulated_length: packet.accumulated_length + current_packet_length,
+                        });
+                    }
+                    // update previous packets
+                    else if new_length == 0 {
+                        let mut acc_length = packet.accumulated_length + current_packet_length;
+                        while let Some(prev_packet) = packet_stack.pop() {
+                            let mut updated_length = 0;
+                            let updated_acc_length = prev_packet.accumulated_length + acc_length;
+                            if prev_packet.packet_length_type == SubpacketLengthType::Length {
+                                updated_length = prev_packet.length_field - acc_length;
+                            } else if prev_packet.packet_length_type == SubpacketLengthType::Number
+                            {
+                                updated_length = prev_packet.length_field - 1;
+                            }
+                            if updated_length > 0 {
+                                packet_stack.push(Packet {
+                                    packet_length_type: prev_packet.packet_length_type,
+                                    length_field: updated_length,
+                                    accumulated_length: updated_acc_length,
+                                });
+                                break;
+                            }
+                            acc_length = updated_acc_length;
+                        }
+                    }
+                }
             }
             _ => {
                 let length_type = next_bits(&mut position, input, 1) as u8;
+                let mut acc_length = 7;
+                let mut subpackets_length = 0;
+                let mut length_type_enum = SubpacketLengthType::Length;
                 if length_type == 0 {
-                    let subpackets_length = next_bits(&mut position, input, 15) as u8;
+                    subpackets_length = next_bits(&mut position, input, 15) as usize;
+                    acc_length += 15;
                 } else if length_type == 1 {
-                    let subpackets_number = next_bits(&mut position, input, 11) as u8;
+                    subpackets_length = next_bits(&mut position, input, 11) as usize;
+                    acc_length += 11;
+                    length_type_enum = SubpacketLengthType::Number;
                 }
+                packet_stack.push(Packet {
+                    packet_length_type: length_type_enum,
+                    length_field: subpackets_length,
+                    accumulated_length: acc_length,
+                });
             }
         }
+        if packet_stack.is_empty() {
+            let packet_size = position - position_;
+            end = solve_padding(&mut position, input, packet_size);
+            position_ = position;
+        }
     }
-    
     println!("Puzzle 1: {:?}", version_count);
 }
 
