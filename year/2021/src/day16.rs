@@ -52,6 +52,49 @@ fn solve_padding(position: &mut usize, input: &Vec<u8>, current_packet_size: usi
     false
 }
 
+fn perform_calculation(literal_stack: &mut Vec<u64>, literal_size: usize, calculation_type: u8) {
+    let mut result = 0u64;
+    let mut ls_clone = literal_stack.clone();
+    literal_stack.drain(literal_stack.len() - literal_size..literal_stack.len());
+    let literal_slice = &ls_clone[ls_clone.len() - literal_size..ls_clone.len()];
+    match calculation_type {
+        0 => {
+            result = literal_slice.iter().sum();
+        }
+        1 => {
+            result = 1;
+            for literal in literal_slice {
+                result *= literal;
+            }
+        }
+        2 => {
+            result = *literal_slice.iter().min().unwrap();
+        }
+        3 => {
+            result = *literal_slice.iter().max().unwrap();
+        }
+        5 => {
+            if literal_slice[0] > literal_slice[1] {
+                result = 1;
+            }
+        }
+        6 => {
+            if literal_slice[0] < literal_slice[1] {
+                result = 1;
+            }
+        }
+        7 => {
+            if literal_slice[0] == literal_slice[1] {
+                result = 1;
+            }
+        }
+        _ => {
+            println!("{}", "Type id field error")
+        }
+    }
+    literal_stack.push(result);
+}
+
 #[derive(PartialEq)]
 enum SubpacketLengthType {
     // Length of subpackets
@@ -64,12 +107,17 @@ struct Packet {
     packet_length_type: SubpacketLengthType,
     length_field: usize,
     accumulated_length: usize,
+    // how many literals to include in the calculation
+    literal_size: usize,
+    // type id
+    calculation_type: u8,
 }
 
-fn puzzle_1(input: &Vec<u8>) {
+fn puzzle_1_and_2(input: &Vec<u8>) {
     let mut position: usize = 0;
     let mut version_count = 0u32;
     let mut packet_stack: Vec<Packet> = Vec::new();
+    let mut literal_stack: Vec<u64> = Vec::new();
     let mut position_ = 0;
     let mut end = false;
     while !end {
@@ -78,8 +126,10 @@ fn puzzle_1(input: &Vec<u8>) {
         let type_id = next_bits(&mut position, input, 3) as u8;
         let past_position = position;
         match type_id {
+            // literal packet
             4 => {
                 let literal = extract_literal(&mut position, input);
+                literal_stack.push(literal);
                 let current_packet_length = 6 + position - past_position;
                 let mut new_length = 0usize;
                 if let Some(packet) = packet_stack.pop() {
@@ -93,10 +143,18 @@ fn puzzle_1(input: &Vec<u8>) {
                             packet_length_type: packet.packet_length_type,
                             length_field: new_length,
                             accumulated_length: packet.accumulated_length + current_packet_length,
+                            literal_size: packet.literal_size + 1,
+                            calculation_type: packet.calculation_type,
                         });
                     }
                     // update previous packets
+                    // and perform calculations by updating 'literal_stack'
                     else if new_length == 0 {
+                        perform_calculation(
+                            &mut literal_stack,
+                            packet.literal_size + 1,
+                            packet.calculation_type,
+                        );
                         let mut acc_length = packet.accumulated_length + current_packet_length;
                         while let Some(prev_packet) = packet_stack.pop() {
                             let mut updated_length = 0;
@@ -112,14 +170,23 @@ fn puzzle_1(input: &Vec<u8>) {
                                     packet_length_type: prev_packet.packet_length_type,
                                     length_field: updated_length,
                                     accumulated_length: updated_acc_length,
+                                    literal_size: prev_packet.literal_size + 1,
+                                    calculation_type: prev_packet.calculation_type,
                                 });
                                 break;
+                            } else if updated_length == 0 {
+                                perform_calculation(
+                                    &mut literal_stack,
+                                    prev_packet.literal_size + 1,
+                                    prev_packet.calculation_type,
+                                );
                             }
                             acc_length = updated_acc_length;
                         }
                     }
                 }
             }
+            // operation packet
             _ => {
                 let length_type = next_bits(&mut position, input, 1) as u8;
                 let mut acc_length = 7;
@@ -137,6 +204,8 @@ fn puzzle_1(input: &Vec<u8>) {
                     packet_length_type: length_type_enum,
                     length_field: subpackets_length,
                     accumulated_length: acc_length,
+                    literal_size: 0,
+                    calculation_type: type_id,
                 });
             }
         }
@@ -147,15 +216,12 @@ fn puzzle_1(input: &Vec<u8>) {
         }
     }
     println!("Puzzle 1: {:?}", version_count);
-}
-
-fn puzzle_2() {
-    println!("Puzzle 2: {:?}", 1);
+    println!("Puzzle 2: {:?}", literal_stack[0]);
 }
 
 pub fn run() {
     let input: String =
         fs::read_to_string("./year/2021/inputs/day16.input").expect("Error reading file.");
     let hex_u8 = hex::decode(input).expect("Hex decoding error.");
-    puzzle_1(&hex_u8);
+    puzzle_1_and_2(&hex_u8);
 }
