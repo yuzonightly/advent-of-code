@@ -5,7 +5,7 @@ use std::str::{self, FromStr};
 
 use hex;
 
-// Returns the next X bits, where X == next
+// Returns the next X bits from 'input', where X == 'next'
 fn next_bits(position: &mut usize, input: &Vec<u8>, next: usize) -> u64 {
     let mut bits = 0u64;
     for i in 0..next {
